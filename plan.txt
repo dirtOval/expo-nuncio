@@ -1,0 +1,18 @@
+serverless mobile chat app
+STACK: TS
+
+FRONT:
+  react native + expo
+  tailwind
+
+BACK:
+  socket.io
+  Redis (for fast data access)
+  [another database to store for persistence] for now let's say SQLite with DrizzleORM
+
+PLAN OF ACTION:
+1. build out a super bare bones chat client in react native.
+   can send and receive messages via websockets
+   stored in memory with redis and displayed by react native
+2. message persistence with SQLite
+3. features + make it cute!
