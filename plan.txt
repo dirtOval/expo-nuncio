@@ -16,3 +16,10 @@ PLAN OF ACTION:
    stored in memory with redis and displayed by react native
 2. message persistence with SQLite
 3. features + make it cute!
+   -tailwind for styling
+   -authentication!
+   -SMS?
+
+PART I: BARE BONES MESSENGER
+we make a websocket chat with a single room.
+then we add a menu to have multiple rooms.
