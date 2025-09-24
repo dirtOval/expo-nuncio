@@ -14,6 +14,10 @@ const styles = StyleSheet.create({
   messageText: {
     color: colors.messageColor
   },
+  username: {
+    fontSize: 24,
+    color: colors.messageColor,
+  }
 })
 
 export default styles

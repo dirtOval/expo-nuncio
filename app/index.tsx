@@ -1,13 +1,17 @@
 import { Text, View, StyleSheet } from "react-native";
 import Message from '../components/Message/Message';
 
-const message = 'im deirdre';
+// const message = 'im deirdre';
+const message = {
+  user: 'deirdre',
+  content: 'im deirdre',
+}
 
 export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Messages</Text>
-      <Message content={message}/>
+      <Message content={message.content} user={message.user}/>
     </View>
   );
 }
