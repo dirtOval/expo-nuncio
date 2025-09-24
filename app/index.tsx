@@ -1,5 +1,9 @@
 import { Text, View, StyleSheet } from "react-native";
 import Message from '../components/Message/Message';
+import MessageFeed from '../components/MessageFeed/MessageFeed';
+
+//for testing
+//import messages from '../constants/testMessages.js';
 
 // const message = 'im deirdre';
 const message = {
@@ -11,7 +15,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Messages</Text>
-      <Message content={message.content} user={message.user}/>
+      <MessageFeed />
     </View>
   );
 }
