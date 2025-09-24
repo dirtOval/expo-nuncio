@@ -37,7 +37,7 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
-
+token.txt
 # generated native folders
 /ios
 /android

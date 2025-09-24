@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   messageBubble: {
-    backgroundColor: '#8fe3e0',
-    outlineColor: '#15ff00',
+    backgroundColor: colors.messageBackground,
+    outlineColor: colors.messageOutline,
     outlineStyle: 'solid',
     outlineWidth: 2,
     borderRadius: 5,
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   messageText: {
-    color: '#000'
+    color: colors.messageColor
   },
 })
 
