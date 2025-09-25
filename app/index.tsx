@@ -15,7 +15,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Messages</Text>
-      <MessageFeed />
+      <MessageFeed user="mike" />
     </View>
   );
 }

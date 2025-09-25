@@ -1,58 +1,58 @@
 const messages = [
   {
-    user:'mike',
+    sender:'mike',
     content:'meow im hungry',
   },
   {
-    user:'milo',
+    sender:'milo',
     content:'hisssss',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow meow pls feed me 😢',
   },
   {
-    user:'milo',
+    sender:'milo',
     content:'hissssssssss',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'pls im literally dying',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
   {
-    user:'mike',
+    sender:'mike',
     content:'meow',
   },
 ]
