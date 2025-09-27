@@ -7,7 +7,7 @@ export default function MessageBox() {
 
   return (
     <View style={styles.messageBox}>
-      <TextInput onChangeText={onChangeText} value={text} />
+      <TextInput style={styles.messageInput} onChangeText={onChangeText} value={text} />
     </View>
   );
 }

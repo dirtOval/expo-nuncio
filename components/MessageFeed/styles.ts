@@ -7,7 +7,10 @@ const styles = StyleSheet.create({
     outlineColor: colors.feedOutline,
     outlineStyle: 'solid',
     outlineWidth: 2,
-    height: '%50',
+    flex: 10,
+    // height: '%50',
     //width: 100%,
   },
 })
+
+export default styles;
