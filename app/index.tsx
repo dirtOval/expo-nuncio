@@ -1,4 +1,5 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Message from '../components/Message/Message';
 import MessageFeed from '../components/MessageFeed/MessageFeed';
 import MessageBox from '../components/MessageBox/MessageBox';
@@ -14,11 +15,13 @@ const message = {
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Messages</Text>
-      <MessageFeed user="mike" />
-      <MessageBox />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.header}>Messages</Text>
+        <MessageFeed user="mike" />
+        <MessageBox />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
