@@ -20,6 +20,7 @@ const getMessages = () => {
   return messages;
 }
 
+
 export default function Index() {
   const [messages, setMessages] = useState([]);
 
@@ -28,14 +29,19 @@ export default function Index() {
     setMessages(msgLog);
   }, []);
 
+  const addMessage = (content) => {
+    const newMsg = {sender: 'mike', content: content, user: 'mike' }
+    setMessages([...messages, newMsg])
+  };
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView style={styles.keyboardAvoider}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <Text style={styles.header}>Messages</Text>
-          <MessageFeed user="mike" />
-          <MessageBox />
+          <MessageFeed user="mike" messages={messages} />
+          <MessageBox addMessage={addMessage} />
         </KeyboardAvoidingView>
       </SafeAreaView>
     </SafeAreaProvider>

@@ -1,9 +1,9 @@
 import { FlatList, ScrollView } from 'react-native';
 import Message from '../Message/Message';
 import styles from './styles';
-import messages from '../../constants/testMessages.js';
+//import messages from '../../constants/testMessages.js';
 
-export default function MessageFeed({user}) {
+export default function MessageFeed({user, messages}) {
   return (
     <FlatList
       style={styles.messageFeed}
