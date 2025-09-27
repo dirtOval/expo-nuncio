@@ -6,8 +6,10 @@ const styles = StyleSheet.create({
   messageBox: {
     backgroundColor: colors.appBG,
     height: '10%',
-    justifyContent: 'center',
+    width: '95%',
+    justifyContent: 'spaceBetween',
     alignItems: 'center',
+    flexDirection: 'row',
     // flex: 1,
   },
   messageInput: {
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
     height: '100%',
     textWrap: 'true',
     flexShrink: 1,
-  }
+  },
 })
 
 export default styles;
