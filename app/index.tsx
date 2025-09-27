@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 import Message from '../components/Message/Message';
 import MessageFeed from '../components/MessageFeed/MessageFeed';
+import MessageBox from '../components/MessageBox/MessageBox';
 
 //for testing
 //import messages from '../constants/testMessages.js';
@@ -16,6 +17,7 @@ export default function Index() {
     <View style={styles.container}>
       <Text style={styles.header}>Messages</Text>
       <MessageFeed user="mike" />
+      <MessageBox />
     </View>
   );
 }
