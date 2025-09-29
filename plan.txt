@@ -1,4 +1,4 @@
-serverless mobile chat app
+ mobile chat app
 STACK: TS
 
 FRONT:
@@ -23,3 +23,5 @@ PLAN OF ACTION:
 PART I: BARE BONES MESSENGER
 we make a websocket chat with a single room.
 then we add a menu to have multiple rooms.
+
+we're going to use an express server with socket.io for now. go from there.
