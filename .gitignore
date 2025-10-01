@@ -36,6 +36,8 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+socket.js
+
 app-example
 token.txt
 # generated native folders

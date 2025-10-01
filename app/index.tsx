@@ -9,6 +9,9 @@ import colors from '../constants/colors';
 //for testing
 import messages from '../constants/testMessages.js';
 
+//socket stuff
+import socket from './socket';
+
 // const message = 'im deirdre';
 // const message = {
 //   user: 'deirdre',
@@ -27,6 +30,9 @@ export default function Index() {
   useEffect(() => {
     let msgLog = getMessages()
     setMessages(msgLog);
+
+    //for now
+    socket.connect();
   }, []);
 
   const addMessage = (content) => {

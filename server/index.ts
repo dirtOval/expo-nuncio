@@ -2,7 +2,7 @@ import { Server } from 'socket.io';
 
 const io = new Server({
   cors: {
-    origin: ['http://localhost:8081'], //might need to change
+    origin: ['http://localhost:8081', 'http://192.168.1.73'], //might need to change
   }
 })
 
