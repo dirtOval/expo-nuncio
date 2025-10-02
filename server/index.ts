@@ -1,8 +1,10 @@
 import { Server } from 'socket.io';
 
+import ip from '../ip.js';
+
 const io = new Server({
   cors: {
-    origin: ['http://localhost:8081', 'http://192.168.1.73'], //might need to change
+    origin: [ip], //might need to change
   }
 })
 
