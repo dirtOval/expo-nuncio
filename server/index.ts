@@ -8,7 +8,13 @@ const io = new Server({
 
 io.on('connection', (socket) => {
   console.log('someone connected!');
+
+  socket.on('disconnect', () => {
+      console.log('user disconnected');
+    });
+
 });
 
 
 io.listen(3000);
+console.log('server is listening on 3000!');
