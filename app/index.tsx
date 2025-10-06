@@ -1,5 +1,5 @@
 import { Text, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Message from '../components/Message/Message';
 import MessageFeed from '../components/MessageFeed/MessageFeed';
@@ -16,6 +16,8 @@ import socket from './socket';
 
 export default function Index() {
   const [messages, setMessages] = useState([]);
+  const [composing, setComposing] = useState(false);
+  const messageFeedRef = useRef(null);
 
   async function msgInit() {
     socket.connect();
@@ -37,14 +39,21 @@ export default function Index() {
     setMessages([...messages, newMsg])
   };
 
+  const onLayout = () => {
+    if (messageFeedRef && composing) {
+      messageFeedRef.current.scrollToEnd();
+    }
+  }
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView style={styles.keyboardAvoider}
+          onLayout={onLayout}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <Text style={styles.header}>Messages</Text>
-          <MessageFeed user="mike" messages={messages} />
-          <MessageBox addMessage={addMessage} />
+          <MessageFeed ref={messageFeedRef} user="mike" messages={messages} />
+          <MessageBox addMessage={addMessage} feedRef={messageFeedRef} setComposing={setComposing}/>
         </KeyboardAvoidingView>
       </SafeAreaView>
     </SafeAreaProvider>

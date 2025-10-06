@@ -3,9 +3,10 @@ import Message from '../Message/Message';
 import styles from './styles';
 //import messages from '../../constants/testMessages.js';
 
-export default function MessageFeed({user, messages}) {
+export default function MessageFeed({user, messages, ref}) {
   return (
     <FlatList
+      ref={ref}
       style={styles.messageFeed}
       data={messages}
       renderItem={({item}) => <Message content={item.content}
