@@ -1,13 +1,14 @@
 import { Server } from 'socket.io';
 
-import ip from '../ip.js';
+import { clientip } from '../ip.js';
 
 //for testing
 import messages from '../constants/testMessages.js';
 
 const io = new Server({
   cors: {
-    origin: [ip], //might need to change
+    origin: [clientip],
+    methods: ["GET", "POST"], //might need to change
   }
 })
 
