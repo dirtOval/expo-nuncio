@@ -7,32 +7,29 @@ import MessageBox from '../components/MessageBox/MessageBox';
 import colors from '../constants/colors';
 
 //for testing
-import messages from '../constants/testMessages.js';
+//import messages from '../constants/testMessages.js';
 
 //socket stuff
 import socket from './socket';
 
-// const message = 'im deirdre';
-// const message = {
-//   user: 'deirdre',
-//   content: 'im deirdre',
-// }
-
-const getMessages = () => {
-  //it's a dummy function rn, eventually this will pull from db
-  return messages;
-}
 
 
 export default function Index() {
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    let msgLog = getMessages()
-    setMessages(msgLog);
-
-    //for now
+  async function msgInit() {
     socket.connect();
+    socket.emit('request_log');
+  }
+
+  useEffect(() => {
+    //get messages on connect
+    msgInit();
+
+    //event listeners otherwise
+    socket.on('send_log', (data) => {
+      setMessages(data);
+    })
   }, []);
 
   const addMessage = (content) => {
