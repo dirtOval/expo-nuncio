@@ -4,6 +4,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Message from '../components/Message/Message';
 import MessageFeed from '../components/MessageFeed/MessageFeed';
 import MessageBox from '../components/MessageBox/MessageBox';
+import LoginScreen from '../components/LoginScreen/LoginScreen';
 import colors from '../constants/colors';
 
 //for testing
@@ -17,6 +18,7 @@ import socket from './socket';
 export default function Index() {
   const [messages, setMessages] = useState([]);
   const [name, setName] = useState('<Unnamed>');
+  const [loggedIn, setLoggedIn] = useState(false);
   const [composing, setComposing] = useState(false);
   const messageFeedRef = useRef(null);
 
@@ -69,6 +71,7 @@ export default function Index() {
         <KeyboardAvoidingView style={styles.keyboardAvoider}
           onLayout={onLayout}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+          <LoginScreen />
           <Text style={styles.header}>Messages</Text>
           <MessageFeed ref={messageFeedRef} user={name} messages={messages} />
           <MessageBox addMessage={addMessage} feedRef={messageFeedRef} setComposing={setComposing}/>
