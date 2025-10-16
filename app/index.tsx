@@ -16,6 +16,7 @@ import socket from './socket';
 
 export default function Index() {
   const [messages, setMessages] = useState([]);
+  const [name, setName] = useState('<Unnamed>');
   const [composing, setComposing] = useState(false);
   const messageFeedRef = useRef(null);
 
@@ -50,7 +51,7 @@ export default function Index() {
   }, []);
 
   const addMessage = (content) => {
-    const newMsg = {sender: 'mike', content: content, user: 'mike' }
+    const newMsg = {sender: name, content: content}
     setMessages([...messages, newMsg])
     socket.emit('send_message', newMsg);
     // messageFeedRef.current.scrollToEnd();
@@ -69,7 +70,7 @@ export default function Index() {
           onLayout={onLayout}
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <Text style={styles.header}>Messages</Text>
-          <MessageFeed ref={messageFeedRef} user="mike" messages={messages} />
+          <MessageFeed ref={messageFeedRef} user={name} messages={messages} />
           <MessageBox addMessage={addMessage} feedRef={messageFeedRef} setComposing={setComposing}/>
         </KeyboardAvoidingView>
       </SafeAreaView>
