@@ -9,6 +9,7 @@ export default function MessageFeed({user, messages, ref}) {
       ref={ref}
       style={styles.messageFeed}
       data={messages}
+      onContentSizeChange={() => ref.current.scrollToEnd()}
       renderItem={({item}) => <Message content={item.content}
                                     sender={item.sender}
                                     user={user} /> } />

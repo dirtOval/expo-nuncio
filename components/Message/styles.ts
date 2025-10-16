@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     outlineStyle: 'solid',
     outlineWidth: 2,
     borderRadius: 5,
-    padding: 5,
+    // padding: 5,
     marginTop: 5,
     width: '70%',
   },

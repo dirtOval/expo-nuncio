@@ -31,12 +31,29 @@ export default function Index() {
     //event listeners otherwise
     socket.on('send_log', (data) => {
       setMessages(data);
-    })
+      // messageFeedRef.current.scrollToEnd();
+    });
+
+    // socket.on('new_message', (data) => {
+    //   setMessages([...messages, data]);
+    //   console.log(messages);
+    //   messageFeedRef.current.scrollToEnd();
+    // });
+
+    return () => {
+      socket.off('send_log');
+      socket.off('new_message');
+      //i have heard this is a bad way to do this
+      //should have named fns
+    }
+
   }, []);
 
   const addMessage = (content) => {
     const newMsg = {sender: 'mike', content: content, user: 'mike' }
     setMessages([...messages, newMsg])
+    socket.emit('send_message', newMsg);
+    // messageFeedRef.current.scrollToEnd();
   };
 
   const onLayout = () => {
@@ -62,7 +79,8 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    height: '100%',
     backgroundColor: colors.appBG,
     //alignItems: 'center',
     justifyContent: 'start',
