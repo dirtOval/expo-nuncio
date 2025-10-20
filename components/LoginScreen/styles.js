@@ -4,6 +4,7 @@ import colors from '../../constants/colors';
 const styles = StyleSheet.create({
   loginView: {
     zIndex: 666,
+    position: 'absolute',
     height: '100%',
     width: '100%',
     alignItems: 'center',
